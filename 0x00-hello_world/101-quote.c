@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Entry point of a C program that prints a quote, followed by a new line, to the standard error.
+ * main - Entry point of a C program.
  *
  * Return: Always 0 (Success)
  */
