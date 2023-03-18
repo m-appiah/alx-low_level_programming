@@ -1,12 +1,16 @@
 #include <stdio.h>
 
 /**
- * main - Entry point of a C program.
- *
- * Return: Always 0 (Success)
+ * main - prints to string
+ * Description: Prints "and that piece of art is useful.." without puts
+ * Return: 1
  */
+
 int main(void)
 {
-	write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59)
-		return (1);
+	char s[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+
+	fprintf(stderr, "%s", s);
+
+	return (1);
 }
