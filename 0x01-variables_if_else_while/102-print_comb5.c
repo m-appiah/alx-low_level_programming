@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 /**
  * main -  program to prints all possible combinations of two two-digit
@@ -7,32 +8,34 @@
  */
 int main(void)
 {
-	int var1;
-	int var2;
-	int var3;
-	int var4;
+	int c, i, k, j;
 
-	for (var1 = '0'; var1 <= '9'; var1++)
+	for (c = 48; c <= 57; c++)
 	{
-		for (var2 = '0'; var2 <= '9'; var2++)
+		for (i = 48; i <= 57; i++)
 		{
-			for (var3 = var1; var3 <= '9'; var3++)
+			for (k = 48; k <= 57; k++)
 			{
-				for (var4 = var2 + 1; var4 <= '9'; var4++)
+				for (j = 48; j <= 57; j++)
 				{
-					putchar(var1);
-					putchar(var2);
-					putchar(' ');
-					putchar(var3);
-					putchar(var4);
-
-					if (!((var1 == '9' && var2 == '8') && (var3 == '9' && var4 == '9')))
+					if (((k + j) > (c + i) && k >= c) || c < k)
+				{
+						putchar(c);
+						putchar(i);
+						putchar(' ');
+						putchar(k);
+						putchar(j);
+					if (c + i + k + j  == 227 && c == 57)
+					{
+						break;
+					}
+					else
 					{
 						putchar(',');
 						putchar(' ');
 					}
 				}
-				var4 = '0';
+				}
 			}
 		}
 	}
