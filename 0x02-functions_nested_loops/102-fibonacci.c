@@ -15,7 +15,7 @@ int main(void)
 	for (w = 0; w < 50; w++)
 	{
 		if (w != 49)
-			printf("%ld\n", x);
+			printf("%ld, ", x);
 		else
 			printf("%ld\n", x);
 		z = y + z;
