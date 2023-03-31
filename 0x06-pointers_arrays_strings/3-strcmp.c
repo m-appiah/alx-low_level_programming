@@ -5,23 +5,19 @@
  * @s1: first string parameter
  * @s2: second string parameter
  *
- * Return: Always 0 (success)
+ * Return: Difference in s1 and s2
  */
 int _strcmp(char *s1, char *s2)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; s1[i] != '\0' || s2[i] != '\0'; i++)
+	while (s1[i] != '\0' && s2[i] != '\0')
 	{
 		if (s1[i] != s2[i])
 		{
-			if (s1[i] < s2[i])
-				return (s1[i] - s2[i]);
-			else if (s1[i] > s2[i])
-				return (s1[i] - s2[i]);
+			return (s1[i] - s2[i]);
 		}
-		else
-			return (0);
+	i++;
 	}
 	return (0);
 }
