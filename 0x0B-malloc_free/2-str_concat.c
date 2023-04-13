@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * str_concat - allocate space in memory for concateneted string
@@ -13,40 +14,25 @@ char *str_concat(char *s1, char *s2)
 	size_t i, len1, len2;
 	char *concat_str;
 
-	i = len1 = len2 = 0;
-	if (s1 == NULL)
+	if (s1 == NULL || s2 == NULL)
 	{
-		s1 = "";
+		return (NULL);
 	}
-	if (s2 == NULL)
-	{
-		s2 = "";
-	}
-
-	while (s1[len1] != '\0')
-	{
-		len1++;
-	}
-	while (s2[len2] != '\0')
-	{
-		len2++;
-	}
+	len1 = strlen(s1);
+	len2 = strlen(s2);
 
 	concat_str = (char *) malloc((len1 + len2 + 1) * sizeof(char));
 	if (concat_str == NULL)
 	{
 		return (NULL);
 	}
-	while (i < len1)
+	for (i = 0; i < len1; i++)
 	{
-		i++;
 		concat_str[i] = s1[i];
 	}
-	while (i < len2)
+	for (i = 0; i <= len2; i++)
 	{
-		i++;
-		concat_str[len1 + 1] = s2[i];
+		concat_str[len1 + i] = s2[i];
 	}
-	concat_str[len1 + len2] = '\0';
 	return (concat_str);
 }
