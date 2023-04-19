@@ -19,7 +19,7 @@ char *my_strdup(char *str)
 	{
 		return (NULL);
 	}
-	return ((char *)strcpy(nw_str, str));
+	return ((char *)memcpy(nw_str, str, len));
 }
 
 /**
