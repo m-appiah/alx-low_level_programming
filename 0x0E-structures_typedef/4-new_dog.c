@@ -19,7 +19,7 @@ char *my_strdup(char *str)
 	{
 		return (NULL);
 	}
-	return ((char *)memcpy(nw_str, str, len));
+	return ((char *)strcpy(nw_str, str));
 }
 
 /**
@@ -34,7 +34,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
 
-	if (name == NULL || owner == NULL)
+	if (name == NULL || owner == NULL || strlen(name) == 0 || strlen(owner) == 0)
 	{
 		return (NULL);
 	}
@@ -43,13 +43,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		return (NULL);
 	}
-	new_dog->name = strdup(name);
+	new_dog->name = my_strdup(name);
 	if (new_dog->name == NULL)
 	{
 		free(new_dog);
 		return (NULL);
 	}
-	new_dog->owner = strdup(owner);
+	new_dog->owner = my_strdup(owner);
 	if (new_dog->owner == NULL)
 	{
 		free(new_dog->name);
