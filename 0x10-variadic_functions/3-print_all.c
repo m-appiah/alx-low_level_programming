@@ -32,7 +32,7 @@ void print_all(const char * const format, ...)
 				string = va_arg(arguments, char *);
 				if (string == NULL)
 				{
-					printf("nil");
+					printf("(nil)");
 					break;
 				}
 				printf("%s", string);
