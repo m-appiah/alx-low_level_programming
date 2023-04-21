@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 
 	for (; start < end ; start++)
 	{
-		printf("%.2x ", *start);
+		printf("%.2hhx ", *start);
 	}
 	printf("\n");
 	return (0);
