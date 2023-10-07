@@ -16,6 +16,7 @@ void shash_table_delete(shash_table_t *ht);
 shash_table_t *shash_table_create(unsigned long int size)
 {
 	shash_table_t *new_table;
+	unsigned long int i;
 
 	new_table = malloc(sizeof(shash_table_t));
 	if (new_table == NULL)
@@ -29,7 +30,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 		return (NULL);
 	}
 
-	for (unsigned long int i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 		new_table->array[i] = NULL;
 
 	new_table->shead = NULL;
