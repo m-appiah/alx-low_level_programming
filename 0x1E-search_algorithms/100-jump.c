@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <math.h>
+#include "search_algos.h"
 
 /**
  * jump_search - Searches for a value in a sorted array using Jump search algorithm
@@ -11,8 +10,7 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-	int i;
-	int step;
+	int i, step;
 	int prev = 0;
 
 	if (array == NULL || size == 0)
