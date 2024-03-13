@@ -1,4 +1,4 @@
-#include "search_algos.h" 
+#include "search_algos.h"
 
 /**
  * interpolation_search - Searches for a value in a sorted array using
@@ -7,7 +7,7 @@
  * @size: The number of elements in the array
  * @value: The value to search for
  *
- * Return: The first index where value is located, or -1 if not found or array is NULL
+ * Return: The first index where value is located
  */
 int interpolation_search(int *array, size_t size, int value)
 {
@@ -19,7 +19,8 @@ int interpolation_search(int *array, size_t size, int value)
 
 	while (low <= high && value >= array[low] && value <= array[high])
 	{
-		pos = low + (((double)(high - low) / (array[high] - array[low])) * (value - array[low]));
+		pos = low + (((double)(high - low) / (array[high] - array[low])) * (
+					value - array[low]));
 
 		printf("Value checked array[%lu] = [%d]\n", pos, array[pos]);
 
